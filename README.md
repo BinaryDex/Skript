@@ -8,7 +8,7 @@ I'll probably update this frequently, so keep checking back here!<br>
 
 -- Links --
 
-Spigot Profile - https://www.spigotmc.org/members/honestlydex.1235803/<br>
+Spigot Profile - <a href="https://www.spigotmc.org/members/honestlydex.1235803/">spigot profile??</a><br>
 Twitter - https://twitter.com/HonestlyDex<br>
 TikTok - https://tiktok.com/@honestlydex<br>
 Discord Server - https://discord.gg/9QBuZ4bcdY<br>
