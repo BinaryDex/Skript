@@ -1,0 +1,26 @@
+# Made By Dex
+
+options:
+	prefix: &8[&dServerNameHere&8]
+	frame: blue stained glass pane
+	SoundB: BLOCK_NOTE_BLOCK_PLING
+	SoundB-Volume: 1
+	SoundB-Pitch: 2
+
+on death:
+	set {back.%player%} to player's location
+	send "{@prefix} &aYour location has been set for /back" to player
+	wait 7 ticks
+	play sound "{@SoundB}" with volume {@SoundB-Volume} and pitch {@SoundB-Pitch}
+
+command /back:
+	permission: skript.back
+	permission message: {@prefix} &cNo Permission.
+	trigger:
+		open virtual chest inventory with size 3 named "&dBack" to player
+		format gui slot integers between 0 and 26 of player with {@frame} named "&7✰"
+		play sound "{@SoundB}" with volume {@SoundB-Volume} and pitch {@SoundB-Pitch}
+		format gui slot 13 of player with ender pearl of power 1 with hidden enchants named "&dTeleport to &cDeath &dLocation" to run:
+			teleport player to {back.%player%}
+			close player's inventory
+			play sound "{@SoundB}" with volume {@SoundB-Volume} and pitch {@SoundB-Pitch}
