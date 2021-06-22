@@ -1,0 +1,83 @@
+options:
+	prefix: &8[&dDex&cLive&8]
+	sprefix: &8[&dServerNameHere&8]
+	SoundBC: BLOCK_NOTE_BLOCK_PLING
+	SoundBC-Volume: 1
+	SoundBC-Pitch: 2
+
+command /live:
+	aliases: /dexlive, /livedex, /ld
+	cooldown: 2 minutes
+	cooldown message: {@prefix} &cPlease wait to use this command again!
+	permission: dexlive.live
+	permission message: {@prefix} &cInvalid Permissions!
+	trigger:
+		send " " to player
+		send "&a&m------»&r &dDex&cLive &a&m«------" to player
+		send " " to player
+		send " &7Click on one of the options:" to player
+		send "     <tooltip:&6Click to choose &fYou&cTube><run command:/ytlive>&f&lYou&c&lTube<reset> <tooltip:&6Click to choose &dTwitch><run command:/twitchlive>&d&lTwitch<reset>" to player
+		send " " to player
+		send "&a&m------»&r &dDex&cLive &a&m«------" to player
+
+# Twitch Command Hook
+command /twitchlive:
+	cooldown: 2 minutes
+	cooldown message: {@prefix} &cPlease wait to use this command again!
+	permission: dexlive.twitch
+	permission message: {@prefix} &cInvalid Permissions!
+	trigger:
+		set {twitchuser::%player's uuid%} to true
+		send " " to player
+		send "&a&m------»&r &dDex&cLive &a&m«------" to player
+		send " " to player
+		send " &7Please type your &dTwitch &7Username in chat." to player
+		send "            &7Example: honestlydex" to player
+		send " " to player
+		send "&a&m------»&r &dTwitch &a&m«------" to player
+
+# YouTube Command Hook
+command /ytlive:
+	cooldown: 2 minutes
+	cooldown message: {@prefix} &cPlease wait to use this command again!
+	permission: dexlive.yt
+	permission message: {@prefix} &cInvalid Permissions!
+	trigger:
+		set {ytuser::%player's uuid%} to true
+		send " " to player
+		send "&a&m------»&r &dDex&cLive &a&m«------" to player
+		send " " to player
+		send " &7Please type your &fYou&cTube &7Channel ID in chat." to player
+		send "      &7Example: UC3zWyHG6lFjpVZXbcRPzzag" to player
+		send " " to player
+		send "&a&m------»&r &fYou&cTube &a&m«------" to player
+
+# Twitch Chat Hook
+on chat:
+	if {twitchuser::%player's uuid%} is set:
+		cancel event
+		delete {twitchuser::%player's uuid%}
+		set {_t} to message
+		send " " to all players
+		send "&a&m---------------»&r &c%player% &cIs Live! &a&m«---------------" to all players
+		send " " to all players
+		send formatted "              &cOpen their &dTwitch &cStream <tooltip:&6Click to open &c%player%'s &6Stream><link:https://twitch.tv/%{_t}%>&e&nhere." to all players
+		send " " to all players
+		send "&a&m---------------»&r &c%player% &cIs Live! &a&m«---------------" to all players
+		send " " to all players
+		play sound "{@SoundBC}" with volume {@SoundBC-Volume} and pitch {@SoundBC-Pitch} to all players
+
+# YouTube Chat Hook
+on chat:
+	if {ytuser::%player's uuid%} is set:
+		cancel event
+		delete {ytuser::%player's uuid%}
+		set {_y} to message
+		send " " to all players
+		send "&a&m---------------»&r &c%player% &cIs Live! &a&m«---------------" to all players
+		send " " to all players
+		send formatted "            &cOpen their &fYou&cTube &cStream <tooltip:&6Click to open &c%player%'s &6Stream><link:https://youtube.com/channel/%{_y}%>&e&nhere." to all players
+		send " " to all players
+		send "&a&m---------------»&r &c%player% &cIs Live! &a&m«---------------" to all players
+		send " " to all players
+		play sound "{@SoundBC}" with volume {@SoundBC-Volume} and pitch {@SoundBC-Pitch} to all players
