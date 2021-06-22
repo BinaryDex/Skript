@@ -1,0 +1,23 @@
+# Made By Dex
+
+# How to Customize?
+# On line 1 change the command to whatever you like
+# On line 2 change the cooldown to whatever you like (You can disable the cooldown by deleting the line or changin the line to " # cooldown: 5 minutes "
+#On line 5 and 7 you can change the item(s) it will give, the lore(s) the name(s) and the amount.
+
+options:
+	prefix: &dServerNameHere
+	Sounditem: BLOCK_NOTE_BLOCK_PLING
+	Sounditem-Volume: 1
+	Sounditem-Pitch: 2
+
+command /item:
+	cooldown: 5 minutes
+	cooldown message: {@prefix} &3| &cPlease wait before using this command again.
+	trigger:
+		give player 16 of wither skeleton skull with lore "&6This skull was created" and "&6through the &8/item &6command!"
+		wait 1 tick
+		give player 16 of nether star with lore "&6This Star was created" and "&6through the &8/item &6command!"
+		wait 1 tick
+		play sound "{@Sounditem}" with volume {@Sounditem-Volume} and pitch {@Sounditem-Pitch} to all players
+		send "{@prefix} &3| &dYou Just got Items!"
