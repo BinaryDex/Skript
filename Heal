@@ -1,0 +1,17 @@
+# Made By Dex
+
+options:
+	prefix: &dServerNameHere
+	SoundH: BLOCK_NOTE_BLOCK_PLING
+	SoundH-Volume: 1
+	SoundH-Pitch: 2
+
+command /heal:
+	cooldown: 1 minute
+	cooldown message: {@prefix} &3| &cPlease wait to use this command again!
+	permission: skript.heal
+	permission message: {@prefix} &3| &cNo Permisson!
+	trigger:
+		heal player
+		send "{@prefix} &3| &bYou have been healed!"
+	   play sound "{@SoundH}" with volume {@SoundH-Volume} and pitch {@SoundH-Pitch}
