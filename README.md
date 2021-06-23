@@ -13,7 +13,7 @@ Twitter - <a href="https://twitter.com/HonestlyDex">twitter.com/HonestlyDex</a><
 TikTok - <a href="https://tiktok.com/@honestlydex">tiktok.com/@honestlydex</a><br>
 Discord Server - <a href="https://discord.gg/9QBuZ4bcdY">discord.gg/9QBuZ4bcdY</a><br>
 Roblox Profile - <a href="https://roblox.com/users/522475931/profile">roblox.com/HonestlyDex</a><br>
-Hypixel Profile - <a href="https://hypixel.net/">(Website Is Down LINK SOON!)</a><br>
+Hypixel Profile - <a href="https://hypixel.net/members/animedex.3772989/">hypixel.net/animedex</a><br>
 Blooket Profile/Stats - <a href="https://www.blooket.com/stats?name=D3_X">blooket.com/D3_X</a><br>
 
 
