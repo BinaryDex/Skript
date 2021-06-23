@@ -1,0 +1,29 @@
+#Made By Dex
+
+variables:
+	{%player%.random} = true
+	
+options:
+	SoundR: BLOCK_NOTE_BLOCK_PLING
+	SoundR-Volume: 1
+	SoundR-Pitch: 2
+	SoundRF-Pitch: -5
+
+every 10 seconds:
+  loop all players:
+    if {%loop-player%.random} = true:
+      give loop-player a random element of all items
+	 	play sound "{@SoundR}" with volume {@SoundR-Volume} and pitch {@SoundR-Pitch}
+      wait 1 tick
+ 
+ 
+command /toggle:
+  trigger:
+    if {%player%.random} = true:
+      set {%player%.random} to false
+      message "&c&lDISABLED &dYou will no longer receive a random items every 10 seconds" to player
+	 	play sound "{@SoundR}" with volume {@SoundR-Volume} and pitch {@SoundRF-Pitch}
+    else:
+      set {%player%.random} to true
+      message "&a&lENABLED &dYou will now receive a random item every 10 seconds" to player
+	 	play sound "{@SoundR}" with volume {@SoundR-Volume} and pitch {@SoundR-Pitch}
