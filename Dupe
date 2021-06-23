@@ -1,0 +1,26 @@
+# Made By Dex
+
+options:
+    blacklist: command block and bedrock and repeating command block and debug stick and player head and wither skeleton skull
+
+command /dupe [<number>]:
+    trigger:
+        if {@blacklist} contains type of tool:
+            send "&e&lStar&9&lDupe &7| &3You cannot dupe that item!"
+            stop
+        else:
+            if arg-1 is not set:
+                add player's tool to player's inventory
+                stop
+            else:
+                if arg-1 is less than 2:
+                    add player's tool to player's inventory
+                    stop
+                else:
+                    if arg-1 is more than 5:
+                        loop 6 times:
+                            add player's tool to player's inventory
+                        stop
+                    else:
+                        loop arg-1 times:
+                            add player's tool to player's inventory
