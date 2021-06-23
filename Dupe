@@ -2,11 +2,12 @@
 
 options:
     blacklist: command block and bedrock and repeating command block and debug stick and player head and wither skeleton skull
+	 prefix: &dSERVERNAMEHERE
 
 command /dupe [<number>]:
     trigger:
         if {@blacklist} contains type of tool:
-            send "&e&lStar&9&lDupe &7| &3You cannot dupe that item!"
+            send "{@prefix} &3| &3You cannot dupe that item!"
             stop
         else:
             if arg-1 is not set:
