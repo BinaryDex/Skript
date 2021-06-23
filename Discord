@@ -1,6 +1,6 @@
 # Made By Dex
 
-options
+options:
 	prefix: &8[&dServerNameHere&8]
 	SoundD: BLOCK_NOTE_BLOCK_PLING
 	SoundD-Volume: 1
