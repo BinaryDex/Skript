@@ -1,0 +1,17 @@
+options:
+	prefix: &dSERVERNAMEHERE
+	SoundCC: BLOCK_NOTE_BLOCK_PLING
+	SoundCC-Volume: 1
+	SoundCC-Pitch: 2
+
+command /clearchat:
+	permission: clearchat.use
+	permission message: &cYou do not have the required permissions to use this command.
+	aliases: cc, chatclear
+	trigger:
+    	loop 250 times:
+      		broadcast " "
+      		broadcast "  "
+    	broadcast "{@prefix} &3» &aChat was cleared by &2%player%"
+	 	wait 1 tick
+	 	play sound "{@SoundBM}" with volume {@SoundBM-Volume} and pitch {@SoundBM-Pitch}
