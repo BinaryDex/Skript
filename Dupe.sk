@@ -1,8 +1,8 @@
 # Made By Dex
 
 options:
-    blacklist: command block and bedrock and repeating command block and debug stick and player head and wither skeleton skull
-	 prefix: &dSERVERNAMEHERE
+	blacklist: command block and bedrock and repeating command block and debug stick and player head and wither skeleton skull
+	prefix: &dSERVERNAMEHERE
 
 command /dupe [<number>]:
     trigger:
