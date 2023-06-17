@@ -1,0 +1,25 @@
+# Made by Dex
+
+options:
+    prefix: &dYourServerName
+
+command /mutechat:
+    permission: chat.mute
+    permission message: {@prefix} &cYou don't have the required permission to perform that command.
+    trigger:
+        if {Globalchat} is not set:
+            set {Globalchat} to true
+            broadcast "{@prefix} &c&lChat muted by &r&c%player%"
+            stop trigger
+
+        if {Globalchat} is set:
+            clear {Globalchat}
+            broadcast "{@prefix} &a&lChat unmuted by &r&a%player%"
+
+on chat:
+    if {Globalchat} is true:
+        if player has permission "chat.mute.bypass":
+            stop trigger
+        else:
+            cancel event
+            send "{@prefix} &cChat is currently muted."
